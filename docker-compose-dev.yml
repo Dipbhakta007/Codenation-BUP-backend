@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    command: bash -c "cd codenation_bup && python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - '8000:8000'
