@@ -1,0 +1,36 @@
+version: '3'
+
+volumes:
+    db:
+
+services:
+  db:
+      image: postgres:12
+      env_file:
+        - ./postgres.env
+      networks:
+        - codenation-bup-network
+      restart: always
+      volumes:
+        - db:/var/lib/postgresql/data/pgdata
+      ports:
+        - '5434:5432'
+  web:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    depends_on:
+      - db
+    networks:
+      - codenation-bup-network
+    env_file:
+      - ./.env
+      - ./postgres.env
+    entrypoint: bash -c "python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./:/app/
+    ports:
+      - '8000:8000'
+
+networks:
+  codenation-bup-network:
