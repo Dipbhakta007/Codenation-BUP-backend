@@ -21,4 +21,5 @@ import base
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('base.urls')),
+    path('', include('django_prometheus.urls')),
 ]

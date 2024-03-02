@@ -16,7 +16,7 @@ services:
         - db:/var/lib/postgresql/data/pgdata
       ports:
         - '5434:5432'
-  web:
+  service-2:
     build:
       dockerfile: Dockerfile.dev
       context: .
@@ -43,6 +43,66 @@ services:
       - redis_data:/data
     command: redis-server --appendonly yes
     restart: always
+  grafana:
+    image: grafana/grafana:8.5.2
+    networks:
+      - codenation-bup-network
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/dashboard.yaml:/etc/grafana/provisioning/datasources/dashboard.yaml
+    depends_on:
+      # - tempo
+      - loki
+      - prometheus
+      - jaeger
+
+  # tempo:
+  #   image: grafana/tempo:1.2.1
+  #   ports:
+  #     - "14268:14268"
+  #   command:
+  #     - -config.file=/etc/tempo/tempo.yaml
+  #   volumes:
+  #     - ./tempo/tempo.yaml:/etc/tempo/tempo.yaml
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.32
+    networks:
+      - codenation-bup-network
+    ports:
+      - 16686:16686
+      - 6831:6831
+
+  loki:
+    image: grafana/loki:2.5.0
+    networks:
+      - codenation-bup-network
+    ports:
+      - "3100:3100"
+    depends_on:
+      - promtail
+
+  promtail:
+    image: grafana/promtail:2.5.0
+    networks:
+      - codenation-bup-network
+    volumes:
+      - ./promtail/promtail.yaml:/etc/promtail/promtail.yaml
+      - ./service-2.log:/var/log/service-2.log
+    command: --config.file=/etc/promtail/promtail.yaml
+    depends_on:
+      - service-2
+
+  prometheus:
+    image: prom/prometheus:v2.35.0
+    networks:
+      - codenation-bup-network
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus:/etc/prometheus
+    command: --config.file=/etc/prometheus/prometheus.yaml
 
 networks:
   codenation-bup-network:
