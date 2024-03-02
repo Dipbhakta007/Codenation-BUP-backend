@@ -37,3 +37,273 @@
 [2024-03-02 08:08:42] WARNING [opentelemetry.attributes:99] [trace_id=88475198b8a4adc4b296819977fc7239 span_id=89d59ba5ba9a3ee5] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
 [2024-03-02 08:08:42] WARNING [opentelemetry.attributes:99] [trace_id=88475198b8a4adc4b296819977fc7239 span_id=5c5afec82e91b43f] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
 [2024-03-02 08:08:42] WARNING [opentelemetry.attributes:99] [trace_id=88475198b8a4adc4b296819977fc7239 span_id=5c5afec82e91b43f] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:19:39] WARNING [opentelemetry.attributes:99] [trace_id=b066a751a7d2289c6d5d193d59a5f664 span_id=25583011063aae15] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:19:39] WARNING [opentelemetry.attributes:99] [trace_id=b066a751a7d2289c6d5d193d59a5f664 span_id=25583011063aae15] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:19:39] WARNING [opentelemetry.attributes:99] [trace_id=b066a751a7d2289c6d5d193d59a5f664 span_id=862204acca71b372] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:19:39] WARNING [opentelemetry.attributes:99] [trace_id=b066a751a7d2289c6d5d193d59a5f664 span_id=862204acca71b372] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:19:39] WARNING [opentelemetry.attributes:99] [trace_id=b066a751a7d2289c6d5d193d59a5f664 span_id=d441be63875452de] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:19:39] WARNING [opentelemetry.attributes:99] [trace_id=b066a751a7d2289c6d5d193d59a5f664 span_id=d441be63875452de] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:25:29] WARNING [opentelemetry.attributes:99] [trace_id=14842467c365867558b2fcc672199de4 span_id=916b6fb3ce6e9489] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:25:29] WARNING [opentelemetry.attributes:99] [trace_id=14842467c365867558b2fcc672199de4 span_id=916b6fb3ce6e9489] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:25:29] WARNING [opentelemetry.attributes:99] [trace_id=14842467c365867558b2fcc672199de4 span_id=df9d3f1b1e31f0c5] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:25:29] WARNING [opentelemetry.attributes:99] [trace_id=14842467c365867558b2fcc672199de4 span_id=df9d3f1b1e31f0c5] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:25:29] WARNING [opentelemetry.attributes:99] [trace_id=14842467c365867558b2fcc672199de4 span_id=fd642cff070f9200] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 08:25:29] WARNING [opentelemetry.attributes:99] [trace_id=14842467c365867558b2fcc672199de4 span_id=fd642cff070f9200] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:02:33] ERROR [django.request:225] [trace_id=ccc7867067566147cfb5ff96baee8ef3 span_id=9d307406db6cc7dc] [log_response] Internal Server Error: /api/users/token/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.10/site-packages/opentelemetry/instrumentation/psycopg2/__init__.py", line 183, in execute
+    return _cursor_tracer.traced_execution(
+  File "/usr/local/lib/python3.10/site-packages/opentelemetry/instrumentation/dbapi/__init__.py", line 414, in traced_execution
+    return query_method(*args, **kwargs)
+psycopg2.errors.UndefinedTable: relation "auth_user" does not exist
+LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/rest_framework_simplejwt/views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/usr/local/lib/python3.10/site-packages/rest_framework_simplejwt/serializers.py", line 68, in validate
+    data = super().validate(attrs)
+  File "/usr/local/lib/python3.10/site-packages/rest_framework_simplejwt/serializers.py", line 49, in validate
+    self.user = authenticate(**authenticate_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/views/decorators/debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/__init__.py", line 76, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/usr/local/lib/python3.10/site-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 435, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 262, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1354, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1202, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.10/site-packages/opentelemetry/instrumentation/psycopg2/__init__.py", line 183, in execute
+    return _cursor_tracer.traced_execution(
+  File "/usr/local/lib/python3.10/site-packages/opentelemetry/instrumentation/dbapi/__init__.py", line 414, in traced_execution
+    return query_method(*args, **kwargs)
+django.db.utils.ProgrammingError: relation "auth_user" does not exist
+LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
+                                                             ^
+
+[2024-03-02 09:02:33] ERROR [django.server:179] [trace_id=0 span_id=0] [log_message] "POST /api/users/token/ HTTP/1.1" 500 208119
+[2024-03-02 09:03:45] WARNING [opentelemetry.exporter.jaeger.thrift.send:87] [trace_id=0 span_id=0] [emit] Data exceeds the max UDP packet size; size 82765, max 65000
+[2024-03-02 09:05:52] WARNING [opentelemetry.attributes:99] [trace_id=20813cee8d8291521daa7aa298d42868 span_id=4419ef3a99d53922] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:05:52] WARNING [opentelemetry.attributes:99] [trace_id=20813cee8d8291521daa7aa298d42868 span_id=4419ef3a99d53922] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:05:52] WARNING [opentelemetry.attributes:99] [trace_id=20813cee8d8291521daa7aa298d42868 span_id=7918898c1bf68e06] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:05:52] WARNING [opentelemetry.attributes:99] [trace_id=20813cee8d8291521daa7aa298d42868 span_id=7918898c1bf68e06] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:05:52] WARNING [opentelemetry.attributes:99] [trace_id=20813cee8d8291521daa7aa298d42868 span_id=d6a2aedc1eaf20a7] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:05:52] WARNING [opentelemetry.attributes:99] [trace_id=20813cee8d8291521daa7aa298d42868 span_id=d6a2aedc1eaf20a7] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:22:40] WARNING [opentelemetry.attributes:99] [trace_id=ccfdcd7d7aa83c1fd074ca007f9a9a82 span_id=28324eb8ba190b34] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:22:40] WARNING [opentelemetry.attributes:99] [trace_id=ccfdcd7d7aa83c1fd074ca007f9a9a82 span_id=28324eb8ba190b34] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:22:40] WARNING [opentelemetry.attributes:99] [trace_id=ccfdcd7d7aa83c1fd074ca007f9a9a82 span_id=5a621c98ebe64b8b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:22:40] WARNING [opentelemetry.attributes:99] [trace_id=ccfdcd7d7aa83c1fd074ca007f9a9a82 span_id=5a621c98ebe64b8b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:22:40] WARNING [opentelemetry.attributes:99] [trace_id=ccfdcd7d7aa83c1fd074ca007f9a9a82 span_id=2ed4a178d1af90fa] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:22:40] WARNING [opentelemetry.attributes:99] [trace_id=ccfdcd7d7aa83c1fd074ca007f9a9a82 span_id=2ed4a178d1af90fa] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:22:40] WARNING [opentelemetry.attributes:99] [trace_id=ccfdcd7d7aa83c1fd074ca007f9a9a82 span_id=370594743f1d9e48] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:22:40] WARNING [opentelemetry.attributes:99] [trace_id=ccfdcd7d7aa83c1fd074ca007f9a9a82 span_id=370594743f1d9e48] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:34:51] WARNING [opentelemetry.attributes:99] [trace_id=6e6ae72dd4c1c053d9306bf0b6b6fb13 span_id=8ea5c1d3c31ffea4] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:34:51] WARNING [opentelemetry.attributes:99] [trace_id=6e6ae72dd4c1c053d9306bf0b6b6fb13 span_id=8ea5c1d3c31ffea4] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:34:51] WARNING [opentelemetry.attributes:99] [trace_id=6e6ae72dd4c1c053d9306bf0b6b6fb13 span_id=fcba0b86ad54e4ab] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:34:51] WARNING [opentelemetry.attributes:99] [trace_id=6e6ae72dd4c1c053d9306bf0b6b6fb13 span_id=fcba0b86ad54e4ab] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:34:51] WARNING [opentelemetry.attributes:99] [trace_id=6e6ae72dd4c1c053d9306bf0b6b6fb13 span_id=16c8ea8bed4924f0] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:34:51] WARNING [opentelemetry.attributes:99] [trace_id=6e6ae72dd4c1c053d9306bf0b6b6fb13 span_id=16c8ea8bed4924f0] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:34:51] WARNING [opentelemetry.attributes:99] [trace_id=6e6ae72dd4c1c053d9306bf0b6b6fb13 span_id=89ce400a84606bec] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:34:51] WARNING [opentelemetry.attributes:99] [trace_id=6e6ae72dd4c1c053d9306bf0b6b6fb13 span_id=89ce400a84606bec] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:59:26] WARNING [opentelemetry.attributes:99] [trace_id=ac995ac3ead196016146245ade8ec94a span_id=40a6269b50410fcb] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:59:26] WARNING [opentelemetry.attributes:99] [trace_id=ac995ac3ead196016146245ade8ec94a span_id=40a6269b50410fcb] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:59:26] WARNING [opentelemetry.attributes:99] [trace_id=ac995ac3ead196016146245ade8ec94a span_id=ae05a92767068699] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:59:26] WARNING [opentelemetry.attributes:99] [trace_id=ac995ac3ead196016146245ade8ec94a span_id=ae05a92767068699] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:59:26] WARNING [opentelemetry.attributes:99] [trace_id=ac995ac3ead196016146245ade8ec94a span_id=d46b515c730c4366] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:59:26] WARNING [opentelemetry.attributes:99] [trace_id=ac995ac3ead196016146245ade8ec94a span_id=d46b515c730c4366] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:59:26] WARNING [opentelemetry.attributes:99] [trace_id=ac995ac3ead196016146245ade8ec94a span_id=f0869b332b7e1910] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:59:26] WARNING [opentelemetry.attributes:99] [trace_id=ac995ac3ead196016146245ade8ec94a span_id=f0869b332b7e1910] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 09:59:49] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 09:59:49] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:23] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:23] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:23] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:23] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:24] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:24] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:24] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:24] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:25] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:25] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:25] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:25] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:26] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:26] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:26] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:26] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:27] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:27] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:27] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:27] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:28] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:28] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:28] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:28] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:29] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:29] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:29] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:29] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:29] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:29] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:30] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:30] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:00:30] WARNING [django.request:225] [trace_id=0 span_id=0] [log_response] Unauthorized: /api/blog/posts/
+[2024-03-02 10:00:30] WARNING [django.server:179] [trace_id=0 span_id=0] [log_message] "GET /api/blog/posts/ HTTP/1.1" 401 58
+[2024-03-02 10:01:08] WARNING [opentelemetry.attributes:99] [trace_id=24cf744a013dc1c7b734ac716aaf389d span_id=85002b3eb0d4bffb] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:08] WARNING [opentelemetry.attributes:99] [trace_id=24cf744a013dc1c7b734ac716aaf389d span_id=85002b3eb0d4bffb] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:08] WARNING [opentelemetry.attributes:99] [trace_id=24cf744a013dc1c7b734ac716aaf389d span_id=8b5a1fe04a8aed42] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:08] WARNING [opentelemetry.attributes:99] [trace_id=24cf744a013dc1c7b734ac716aaf389d span_id=8b5a1fe04a8aed42] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:09] WARNING [opentelemetry.attributes:99] [trace_id=543e65987aa0974320f7b5db151c622a span_id=f9eef92c249af048] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:09] WARNING [opentelemetry.attributes:99] [trace_id=543e65987aa0974320f7b5db151c622a span_id=f9eef92c249af048] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:09] WARNING [opentelemetry.attributes:99] [trace_id=543e65987aa0974320f7b5db151c622a span_id=e289cc927227d98f] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:09] WARNING [opentelemetry.attributes:99] [trace_id=543e65987aa0974320f7b5db151c622a span_id=e289cc927227d98f] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:09] WARNING [opentelemetry.attributes:99] [trace_id=3b368b71c670c901a89f2367737ba0c5 span_id=79cac02cd99e5c6b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:09] WARNING [opentelemetry.attributes:99] [trace_id=3b368b71c670c901a89f2367737ba0c5 span_id=79cac02cd99e5c6b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:09] WARNING [opentelemetry.attributes:99] [trace_id=3b368b71c670c901a89f2367737ba0c5 span_id=86fb1347d67d5711] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:09] WARNING [opentelemetry.attributes:99] [trace_id=3b368b71c670c901a89f2367737ba0c5 span_id=86fb1347d67d5711] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:10] WARNING [opentelemetry.attributes:99] [trace_id=5a161a802d9d5d5b2b1927b23aba7291 span_id=149aa4cb5f5a6bb5] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:10] WARNING [opentelemetry.attributes:99] [trace_id=5a161a802d9d5d5b2b1927b23aba7291 span_id=149aa4cb5f5a6bb5] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:10] WARNING [opentelemetry.attributes:99] [trace_id=5a161a802d9d5d5b2b1927b23aba7291 span_id=8df04e156662f032] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:10] WARNING [opentelemetry.attributes:99] [trace_id=5a161a802d9d5d5b2b1927b23aba7291 span_id=8df04e156662f032] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:12] WARNING [opentelemetry.attributes:99] [trace_id=c3792307d48582e9fc1634fe0344a10d span_id=00e7644724a0e2e9] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:12] WARNING [opentelemetry.attributes:99] [trace_id=c3792307d48582e9fc1634fe0344a10d span_id=00e7644724a0e2e9] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:12] WARNING [opentelemetry.attributes:99] [trace_id=c3792307d48582e9fc1634fe0344a10d span_id=799b5cf94220681a] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:12] WARNING [opentelemetry.attributes:99] [trace_id=c3792307d48582e9fc1634fe0344a10d span_id=799b5cf94220681a] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:12] WARNING [opentelemetry.attributes:99] [trace_id=16d088d34b423d3fb5aff3aa52ad729b span_id=bf7d6b6ae0d3034c] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:12] WARNING [opentelemetry.attributes:99] [trace_id=16d088d34b423d3fb5aff3aa52ad729b span_id=bf7d6b6ae0d3034c] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:12] WARNING [opentelemetry.attributes:99] [trace_id=16d088d34b423d3fb5aff3aa52ad729b span_id=763fe4bd358bd091] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:12] WARNING [opentelemetry.attributes:99] [trace_id=16d088d34b423d3fb5aff3aa52ad729b span_id=763fe4bd358bd091] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:13] WARNING [opentelemetry.attributes:99] [trace_id=c60bf7d90183f479a72e0de831889164 span_id=d4ac82a0eb6c40c6] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:13] WARNING [opentelemetry.attributes:99] [trace_id=c60bf7d90183f479a72e0de831889164 span_id=d4ac82a0eb6c40c6] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:13] WARNING [opentelemetry.attributes:99] [trace_id=c60bf7d90183f479a72e0de831889164 span_id=7bb8a179b9e21b0e] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:13] WARNING [opentelemetry.attributes:99] [trace_id=c60bf7d90183f479a72e0de831889164 span_id=7bb8a179b9e21b0e] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:13] WARNING [opentelemetry.attributes:99] [trace_id=9d6a9688e53775a9a3d21b2a11753fd4 span_id=8a9e46fd07cee41f] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:13] WARNING [opentelemetry.attributes:99] [trace_id=9d6a9688e53775a9a3d21b2a11753fd4 span_id=8a9e46fd07cee41f] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:13] WARNING [opentelemetry.attributes:99] [trace_id=9d6a9688e53775a9a3d21b2a11753fd4 span_id=921085fe7613ea2b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:13] WARNING [opentelemetry.attributes:99] [trace_id=9d6a9688e53775a9a3d21b2a11753fd4 span_id=921085fe7613ea2b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:14] WARNING [opentelemetry.attributes:99] [trace_id=f82ff5e4667ad110873072aab008f675 span_id=9f52e1df05b56b5d] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:14] WARNING [opentelemetry.attributes:99] [trace_id=f82ff5e4667ad110873072aab008f675 span_id=9f52e1df05b56b5d] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:14] WARNING [opentelemetry.attributes:99] [trace_id=f82ff5e4667ad110873072aab008f675 span_id=78339279b772bfd7] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:14] WARNING [opentelemetry.attributes:99] [trace_id=f82ff5e4667ad110873072aab008f675 span_id=78339279b772bfd7] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:14] WARNING [opentelemetry.attributes:99] [trace_id=86d123503967add7f64f26b845523490 span_id=70934ab4705884a0] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:14] WARNING [opentelemetry.attributes:99] [trace_id=86d123503967add7f64f26b845523490 span_id=70934ab4705884a0] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:14] WARNING [opentelemetry.attributes:99] [trace_id=86d123503967add7f64f26b845523490 span_id=acf61cc384bf59b8] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:14] WARNING [opentelemetry.attributes:99] [trace_id=86d123503967add7f64f26b845523490 span_id=acf61cc384bf59b8] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=3951a1161081648b4a96f26e4fbfb597 span_id=8c577d314ddd3f9a] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=3951a1161081648b4a96f26e4fbfb597 span_id=8c577d314ddd3f9a] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=3951a1161081648b4a96f26e4fbfb597 span_id=80b54d1da5e4922b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=3951a1161081648b4a96f26e4fbfb597 span_id=80b54d1da5e4922b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=3de703de8f542e26de19bd2bb72b8764 span_id=c49f2fb3685e5618] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=3de703de8f542e26de19bd2bb72b8764 span_id=c49f2fb3685e5618] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=3de703de8f542e26de19bd2bb72b8764 span_id=e0b6a64275e1c922] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=3de703de8f542e26de19bd2bb72b8764 span_id=e0b6a64275e1c922] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=4f4a84a8f812e275562c461cf455f322 span_id=92487d2e6a6d09dc] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=4f4a84a8f812e275562c461cf455f322 span_id=92487d2e6a6d09dc] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=4f4a84a8f812e275562c461cf455f322 span_id=5602a08e8e1cf59d] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:16] WARNING [opentelemetry.attributes:99] [trace_id=4f4a84a8f812e275562c461cf455f322 span_id=5602a08e8e1cf59d] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:17] WARNING [opentelemetry.attributes:99] [trace_id=8713fd8f5f50191ec78c394a0ae96bc5 span_id=1df0460009193673] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:17] WARNING [opentelemetry.attributes:99] [trace_id=8713fd8f5f50191ec78c394a0ae96bc5 span_id=1df0460009193673] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:17] WARNING [opentelemetry.attributes:99] [trace_id=8713fd8f5f50191ec78c394a0ae96bc5 span_id=16eb9a7adec2a7c9] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:17] WARNING [opentelemetry.attributes:99] [trace_id=8713fd8f5f50191ec78c394a0ae96bc5 span_id=16eb9a7adec2a7c9] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:17] WARNING [opentelemetry.attributes:99] [trace_id=b1a75ed8e85cbfdc5b1c4b36ab273c29 span_id=1d830b098eebaddc] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:17] WARNING [opentelemetry.attributes:99] [trace_id=b1a75ed8e85cbfdc5b1c4b36ab273c29 span_id=1d830b098eebaddc] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:17] WARNING [opentelemetry.attributes:99] [trace_id=b1a75ed8e85cbfdc5b1c4b36ab273c29 span_id=7546da9eab8f6f5e] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:17] WARNING [opentelemetry.attributes:99] [trace_id=b1a75ed8e85cbfdc5b1c4b36ab273c29 span_id=7546da9eab8f6f5e] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:18] WARNING [opentelemetry.attributes:99] [trace_id=4f20cfd715ade4ed7ca0fae5d479105b span_id=32bb9ffdaabf2183] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:18] WARNING [opentelemetry.attributes:99] [trace_id=4f20cfd715ade4ed7ca0fae5d479105b span_id=32bb9ffdaabf2183] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:18] WARNING [opentelemetry.attributes:99] [trace_id=4f20cfd715ade4ed7ca0fae5d479105b span_id=3c6c09504ff003c4] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:18] WARNING [opentelemetry.attributes:99] [trace_id=4f20cfd715ade4ed7ca0fae5d479105b span_id=3c6c09504ff003c4] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:19] WARNING [opentelemetry.attributes:99] [trace_id=84982c23720a4484b0f2a3f498856158 span_id=52fe671c29265a91] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:19] WARNING [opentelemetry.attributes:99] [trace_id=84982c23720a4484b0f2a3f498856158 span_id=52fe671c29265a91] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:19] WARNING [opentelemetry.attributes:99] [trace_id=84982c23720a4484b0f2a3f498856158 span_id=4a957b92fdbb0091] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:19] WARNING [opentelemetry.attributes:99] [trace_id=84982c23720a4484b0f2a3f498856158 span_id=4a957b92fdbb0091] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:19] WARNING [opentelemetry.attributes:99] [trace_id=183e08954a9d956ae0158f21b3a93a83 span_id=c840a750e4a4627d] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:19] WARNING [opentelemetry.attributes:99] [trace_id=183e08954a9d956ae0158f21b3a93a83 span_id=c840a750e4a4627d] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:19] WARNING [opentelemetry.attributes:99] [trace_id=183e08954a9d956ae0158f21b3a93a83 span_id=933cec87546370ec] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:19] WARNING [opentelemetry.attributes:99] [trace_id=183e08954a9d956ae0158f21b3a93a83 span_id=933cec87546370ec] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:20] WARNING [opentelemetry.attributes:99] [trace_id=935140444f6b9968d590442edab3964b span_id=14361e136f0f87de] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:20] WARNING [opentelemetry.attributes:99] [trace_id=935140444f6b9968d590442edab3964b span_id=14361e136f0f87de] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:20] WARNING [opentelemetry.attributes:99] [trace_id=935140444f6b9968d590442edab3964b span_id=62cecf30d1cab821] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:20] WARNING [opentelemetry.attributes:99] [trace_id=935140444f6b9968d590442edab3964b span_id=62cecf30d1cab821] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:20] WARNING [opentelemetry.attributes:99] [trace_id=4dd1d8d7ec69f08c38a76d715e687d64 span_id=8e99e305f3842e4b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:20] WARNING [opentelemetry.attributes:99] [trace_id=4dd1d8d7ec69f08c38a76d715e687d64 span_id=8e99e305f3842e4b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:20] WARNING [opentelemetry.attributes:99] [trace_id=4dd1d8d7ec69f08c38a76d715e687d64 span_id=76d82c96195e8d16] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:20] WARNING [opentelemetry.attributes:99] [trace_id=4dd1d8d7ec69f08c38a76d715e687d64 span_id=76d82c96195e8d16] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:21] WARNING [opentelemetry.attributes:99] [trace_id=a1d6e6f43b3512d7b9c42751a8808ffa span_id=4579be7b2b6fc1c5] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:21] WARNING [opentelemetry.attributes:99] [trace_id=a1d6e6f43b3512d7b9c42751a8808ffa span_id=4579be7b2b6fc1c5] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:21] WARNING [opentelemetry.attributes:99] [trace_id=a1d6e6f43b3512d7b9c42751a8808ffa span_id=eeeb6ff1ff675283] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:21] WARNING [opentelemetry.attributes:99] [trace_id=a1d6e6f43b3512d7b9c42751a8808ffa span_id=eeeb6ff1ff675283] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:21] WARNING [opentelemetry.attributes:99] [trace_id=92431540679974fb1cbc5d134d95b0e3 span_id=0719549fceb38e61] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:21] WARNING [opentelemetry.attributes:99] [trace_id=92431540679974fb1cbc5d134d95b0e3 span_id=0719549fceb38e61] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:21] WARNING [opentelemetry.attributes:99] [trace_id=92431540679974fb1cbc5d134d95b0e3 span_id=b4d8548efbffbe30] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:21] WARNING [opentelemetry.attributes:99] [trace_id=92431540679974fb1cbc5d134d95b0e3 span_id=b4d8548efbffbe30] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:22] WARNING [opentelemetry.attributes:99] [trace_id=714af67763b8450105dd1f290241fa1a span_id=f9b385dbfbced9f7] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:22] WARNING [opentelemetry.attributes:99] [trace_id=714af67763b8450105dd1f290241fa1a span_id=f9b385dbfbced9f7] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:22] WARNING [opentelemetry.attributes:99] [trace_id=714af67763b8450105dd1f290241fa1a span_id=35b9fedf35f6a06e] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:22] WARNING [opentelemetry.attributes:99] [trace_id=714af67763b8450105dd1f290241fa1a span_id=35b9fedf35f6a06e] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:23] WARNING [opentelemetry.attributes:99] [trace_id=7af35b2fc7aadc648fcce92da65030cc span_id=1acf4356fae6bc6b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:23] WARNING [opentelemetry.attributes:99] [trace_id=7af35b2fc7aadc648fcce92da65030cc span_id=1acf4356fae6bc6b] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:23] WARNING [opentelemetry.attributes:99] [trace_id=7af35b2fc7aadc648fcce92da65030cc span_id=cb0bf48fbcad3318] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:23] WARNING [opentelemetry.attributes:99] [trace_id=7af35b2fc7aadc648fcce92da65030cc span_id=cb0bf48fbcad3318] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:23] WARNING [opentelemetry.attributes:99] [trace_id=364c24450c29bdd9e7310c6b9d3ba527 span_id=b4614ce4ddc40e40] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:23] WARNING [opentelemetry.attributes:99] [trace_id=364c24450c29bdd9e7310c6b9d3ba527 span_id=b4614ce4ddc40e40] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:23] WARNING [opentelemetry.attributes:99] [trace_id=364c24450c29bdd9e7310c6b9d3ba527 span_id=83dce5d1e160f50c] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:23] WARNING [opentelemetry.attributes:99] [trace_id=364c24450c29bdd9e7310c6b9d3ba527 span_id=83dce5d1e160f50c] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:24] WARNING [opentelemetry.attributes:99] [trace_id=43e9d254a0baf18eaf6995b72ba46cda span_id=394fd81fbc3e5f41] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:24] WARNING [opentelemetry.attributes:99] [trace_id=43e9d254a0baf18eaf6995b72ba46cda span_id=394fd81fbc3e5f41] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:24] WARNING [opentelemetry.attributes:99] [trace_id=43e9d254a0baf18eaf6995b72ba46cda span_id=d47c848ea618d317] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:24] WARNING [opentelemetry.attributes:99] [trace_id=43e9d254a0baf18eaf6995b72ba46cda span_id=d47c848ea618d317] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:25] WARNING [opentelemetry.attributes:99] [trace_id=ef3e8b3e970dc1e303de76d9fe73d338 span_id=8c6c051e5408fb01] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:25] WARNING [opentelemetry.attributes:99] [trace_id=ef3e8b3e970dc1e303de76d9fe73d338 span_id=8c6c051e5408fb01] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:25] WARNING [opentelemetry.attributes:99] [trace_id=ef3e8b3e970dc1e303de76d9fe73d338 span_id=b51494dd3e8c57bd] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types
+[2024-03-02 10:01:25] WARNING [opentelemetry.attributes:99] [trace_id=ef3e8b3e970dc1e303de76d9fe73d338 span_id=b51494dd3e8c57bd] [_clean_attribute] Invalid type NoneType for attribute value. Expected one of ['bool', 'str', 'bytes', 'int', 'float'] or a sequence of those types

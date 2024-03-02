@@ -3,6 +3,7 @@ version: '3'
 volumes:
     db:
     redis_data:
+    grafana_data:
 
 services:
   db:
@@ -51,6 +52,7 @@ services:
       - "3000:3000"
     volumes:
       - ./grafana/dashboard.yaml:/etc/grafana/provisioning/datasources/dashboard.yaml
+      - grafana_data:/var/lib/grafana
     depends_on:
       # - tempo
       - loki
@@ -103,6 +105,18 @@ services:
     volumes:
       - ./prometheus:/etc/prometheus
     command: --config.file=/etc/prometheus/prometheus.yaml
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter
+    ports:
+      - 9187:9187
+    volumes:
+      - ./postgres_exporter/postgres_exporter.yml:/etc/postgres_exporter/postgres_exporter.yml
+    command: --config.file=/etc/postgres_exporter/postgres_exporter.yml
+    environment:
+      DATA_SOURCE_NAME: "postgresql://db:bupict2016@ict:5432/codenationDB?sslmode=disable"
+    links:
+      - db
+      - prometheus
 
 networks:
   codenation-bup-network:

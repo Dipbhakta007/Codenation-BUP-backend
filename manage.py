@@ -11,22 +11,24 @@ from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from opentelemetry.sdk.resources import SERVICE_NAME, Resource
 from opentelemetry.instrumentation.redis import RedisInstrumentor
+from opentelemetry.instrumentation.psycopg2 import Psycopg2Instrumentor
 
 
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'codenation_bup.settings')
 
-    DjangoInstrumentor().instrument()
+    DjangoInstrumentor().instrument(is_sql_commentor_enabled=True)
     LoggingInstrumentor().instrument()
     RedisInstrumentor().instrument()
+    Psycopg2Instrumentor().instrument()
 
     jaeger_exporter = JaegerExporter(
         agent_host_name=os.getenv("TRACING_HOST"),
         agent_port= int(os.getenv("TRACING_PORT")),
     )
     trace.set_tracer_provider(TracerProvider(
-        resource=Resource.create({SERVICE_NAME: 'webapi'})
+        resource=Resource.create({SERVICE_NAME: 'service-2'})
     ))
     span_processor = BatchSpanProcessor(jaeger_exporter)
     trace.get_tracer_provider().add_span_processor(span_processor)
